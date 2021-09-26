@@ -44,6 +44,7 @@ namespace Application.Game.Commands
 
         private void RunGameOnBoard(Board board)
         {
+            int movs = 0;
             foreach (var item in board.Movements)
             {
                 switch (item)
@@ -59,12 +60,18 @@ namespace Application.Game.Commands
                         break;
                 }
 
+                movs++;
+
                 if (_gameOver)
                 {
                     break;
                 }
             }
 
+            if (movs == board.Movements.Count)
+            {
+                board.GameInfo.Add($"Turtle stopped, all movements were executed...");
+            }
         }
 
         private void Rotate(Board board)
