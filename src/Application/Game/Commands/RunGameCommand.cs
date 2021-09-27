@@ -74,7 +74,7 @@ namespace Application.Game.Commands
             }
         }
 
-        private void Rotate(Board board)
+        private static void Rotate(Board board)
         {
             switch (board.Settings.TurtlePosition.Direction)
             {

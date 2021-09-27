@@ -28,7 +28,7 @@ namespace ConsoleUI
 
             var result = await _mediator.Send(new RunGameCommand(
                                             settingsFile,
-                                            movementsFile));
+                                            movementsFile), cancellationToken);
 
             foreach (var item in result.GameInfo)
             {
